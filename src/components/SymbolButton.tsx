@@ -1,4 +1,6 @@
-import { Button, Image, Text, VStack } from "@chakra-ui/react";
+'use client';
+
+import { Button, Image, Text, VStack } from '@chakra-ui/react';
 
 export interface SymbolItem {
   id: string;
@@ -22,15 +24,9 @@ export default function SymbolButton({
       flexDir="column"
       onClick={() => onSelect(item.id)}
     >
-      <VStack gap={1}>
+      <VStack spacing="1">
         <Image src={item.file} alt={item.label} boxSize="48px" />
-        <Text
-          fontSize="sm"
-          overflow="hidden"
-          whiteSpace="nowrap"
-          textOverflow="ellipsis"
-          maxW="full"
-        >
+        <Text fontSize="sm" isTruncated>
           {item.label}
         </Text>
       </VStack>
