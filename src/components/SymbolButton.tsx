@@ -6,18 +6,33 @@ export interface SymbolItem {
   file: string;
 }
 
-export default function SymbolButton({ item, onSelect }: {
+export default function SymbolButton({
+  item,
+  onSelect,
+}: {
   item: SymbolItem;
   onSelect: (id: string) => void;
 }) {
   return (
     <Button
-      w="96px" h="96px" p={2} variant="outline" flexDir="column"
+      w="96px"
+      h="96px"
+      p={2}
+      variant="outline"
+      flexDir="column"
       onClick={() => onSelect(item.id)}
     >
-      <VStack spacing={1}>
+      <VStack gap={1}>
         <Image src={item.file} alt={item.label} boxSize="48px" />
-        <Text fontSize="sm" noOfLines={1}>{item.label}</Text>
+        <Text
+          fontSize="sm"
+          overflow="hidden"
+          whiteSpace="nowrap"
+          textOverflow="ellipsis"
+          maxW="full"
+        >
+          {item.label}
+        </Text>
       </VStack>
     </Button>
   );

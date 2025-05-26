@@ -1,27 +1,50 @@
 {
   "compilerOptions": {
+    /* ▶️ 자바스크립트/타입스크립트 공통 설정 */
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
+
+    /* ▶️ 타입 검사 및 편의 설정 */
     "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
+    "skipLibCheck": true,
+    "allowJs": true,
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
+    "noEmit": true,          // Next.js가 자체 빌드하므로 JS 출력 안 함
+
+    /* ▶️ 모듈 해석 */
+    "module": "esnext",
+    "moduleResolution": "node",   // ← bundler 대신 node 로 두면 IDE 인식이 더 안정적
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+    "isolatedModules": true,
+
+    /* ▶️ IDE 타입 완성용 */
+    "types": [
+      "@types/node",
+      "@types/react",
+      "@types/react-dom"
     ],
+
+    /* ▶️ 프로젝트 alias (@/ → src/) */
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+
+    /* ▶️ Next.js 전용 플러그인 */
+    "plugins": [
+      { "name": "next" }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+
+  /* ▶️ 컴파일 대상 포함/제외 */
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
