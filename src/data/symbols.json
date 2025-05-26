@@ -1,0 +1,7 @@
+[
+  { "id": "apple", "label": "사과", "file": "/symbols/사과.png", "tags": ["fruit"] },
+  { "id": "water", "label": "물", "file": "/symbols/물.png", "tags": ["drink"] },
+  { "id": "rice", "label": "밥", "file": "/symbols/밥.png", "tags": ["food"] },
+  { "id": "microwave", "label": "전자레인지", "file": "/symbols/전자레인지.png", "tags": ["object"] },
+  { "id": "cleanhands", "label": "손이깨끗해요", "file": "/symbols/손이깨끗해요.png", "tags": ["hygiene"] }
+]
